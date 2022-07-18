@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+}
+
+.computerScore, .playerScore{
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.playerScore {
+    padding-right: 560px;
+    position: fixed;
+}
+
+.computerScore {
+    position: fixed;
+    padding-left: 580px;
+}
+
+.options {
+    padding-top: 100px;
+    display: flex;
+    gap: 160px;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border: solid 2px black;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userOptions, .computerOptions {
+    display: flex;
+    gap: 50px;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.icon.fa-scissors:hover {
+    color: rgb(252, 1, 1);
+}
+
+.icon.fa-toilet-paper:hover {
+    color: rgb(246, 240, 240);
+}
+
+.icon.fa-gem:hover {
+    color: #009ffd;
+}
+
+.fa-gem, .fa-scissors, .fa-toilet-paper {
+    font-size: 30px;
+}

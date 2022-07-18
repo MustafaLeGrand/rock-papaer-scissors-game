@@ -10,51 +10,45 @@ function computerPlay() {
     return computerSelection;
 }
 
-//Linking function to computer score variable 
 let computerSelection = computerPlay();
 
-//Linking function to user score variable 
 let playerSelection = computerPlay();
+
+//Round
+let round = 1;
+
+//Add round
+function addRound () {
+    round++;
+}
 
 //Scores
 let playerScore = 0;
 let computerScore = 0;
 
-//Rounds 
-let round = 1;
-
-function addRounds() {
-    round ++;
-}
-
 // Start round, define winner, loser or tie game 
 function playRound (playerSelection, computerSelection) {
+    
     //concatenate strings to match cases 
-    round
     switch (playerSelection + computerSelection) {
         // Tie case
         case 'RockRock':
         case 'PaperPaper':
         case 'ScissorsScissors':
-            return 'Tie Game!';   
+            return 'Tie Game!'; 
         // Player score
         case 'RockScissors':
         case 'PaperRock':
         case 'ScissorsPaper':
-            return `${playerSelection} beats ${computerSelection}, You Won!`, playerScore++;
+            return `${playerSelection} beats ${computerSelection}, You Won!`, playerScore += 1;
         // Computer score    
         case 'ScissorsRock':
         case 'RockPaper':
         case 'PaperScissors':
-            return `${computerSelection} beats ${playerSelection}, Computer Won :(`, computerScore++;
-    }
-    addRounds();
-}
-
-function game () {
-    for (let i = 0; i < 5; i++) {
-        playRound()
+            return `${computerSelection} beats ${playerSelection}, Computer Won :(`, computerScore += 1;
     }
 }
 
-console.log(playRound(playerSelection, computerSelection))
+console.log(playRound(playerSelection, computerSelection));
+
+
