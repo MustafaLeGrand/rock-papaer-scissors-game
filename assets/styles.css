@@ -1,43 +1,74 @@
-* {
+body {
     padding: 0;
     margin: 0;
+    background-color: #0dd2d2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
     display: flex;
     justify-content: center;
-    padding-top: 70px;
+    padding-top: 20px;
 }
 
-.scores {
+.round {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.scoreboard {
+    height: 50px;
+    width: 200px;
+    border: solid 2px black;
+    border-radius: 8px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 150px;
+    gap: 60px;
 }
 
-.computerScore, .playerScore{
+.score {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
     font-size: 30px;
-    justify-content: center;
+}
+
+.user, .comp {
+    display: flex;
     align-items: center;
-    gap: 12px;
+    justify-content: center;
+    border-radius: 3px;
+    height: 30px;
+    padding: 3px 12px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
 }
 
-.playerScore {
-    padding-right: 560px;
-    position: fixed;
+.user {
+    background-color: rgb(255, 136, 0);
+    border: 255,0 ,0;
 }
 
-.computerScore {
-    position: fixed;
-    padding-left: 580px;
+.comp {
+    background-color: rgb(234, 0, 255);
 }
 
 .options {
     padding-top: 100px;
     display: flex;
-    gap: 160px;
+    gap: 200px;
     justify-content: center;
     align-items: center;
 }
@@ -61,18 +92,18 @@
     cursor: pointer;
 }
 
-.icon.fa-scissors:hover {
-    color: rgb(252, 1, 1);
+.fa-hand-scissors.icon:hover {
+    color: rgb(3, 61, 251);
 }
 
-.icon.fa-toilet-paper:hover {
-    color: rgb(246, 240, 240);
+.fa-hand-fist.icon:hover {
+    color: rgb(228, 16, 16);
 }
 
-.icon.fa-gem:hover {
-    color: #009ffd;
+.fa-hand.icon:hover {
+    color: rgb(236, 220, 220);
 }
 
-.fa-gem, .fa-scissors, .fa-toilet-paper {
+.fa-hand-fist, .fa-hand-scissors, .fa-hand {
     font-size: 30px;
 }
