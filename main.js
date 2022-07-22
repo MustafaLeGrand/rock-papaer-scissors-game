@@ -20,13 +20,13 @@ let addRound = () => round += 1;
 let playerScore = 0;
 let computerScore = 0;
 
-// Start round, define winner, loser or tie game 
+// Add round, sum points to round winner
 function playRound () {
 // Selection of user & comp
     let computerSelection = computerPlay();
     let playerSelection = computerPlay();
+// Add up the rounds    
     addRound();
-
     //concatenate strings to match cases 
     switch (playerSelection + computerSelection) {
         // Tie case
@@ -51,18 +51,17 @@ function playRound () {
     }
 }
 
+//Define tie game, winner or loser of the match 
 defineWinner = () => {
     if (playerScore > computerScore) {
         return 'Cheers, You won!';
     } else if (playerScore == computerScore) {
-        return "It's a tie!";
+        return "Game!";
     } else if (computerScore > playerScore) {
-        return 'Computer won, try again!';
+        return 'Computer won 0_0, try again!';
+    } else if (playerScore == 5) {
+        return 'Flawless Victory!'
     }
-}
-
-endGame = () => {
-    
 }
 
 console.log(playRound());

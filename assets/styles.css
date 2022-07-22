@@ -27,13 +27,13 @@ body {
 .scoreboard {
     height: 50px;
     width: 200px;
-    border: solid 2px black;
+    border: double 6px black;
     border-radius: 8px;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 65px;
 }
 
 .score {
