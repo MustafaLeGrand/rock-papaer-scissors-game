@@ -35,19 +35,19 @@ function playRound () {
         case 'ScissorsScissors':
             computerScore += 0;
             playerScore += 0;
-            return ('Tie Game!');
+            return ('Tie!');
         // Player score
         case 'RockScissors':
         case 'PaperRock':
         case 'ScissorsPaper':
             playerScore += 1;
-            return (`${playerSelection} beats ${computerSelection}, You Won!`);
+            return (`${playerSelection} beats ${computerSelection}, You get the round!`);
         // Computer score    
         case 'ScissorsRock':
         case 'RockPaper':
         case 'PaperScissors':
             computerScore += 1;
-            return (`${computerSelection} beats ${playerSelection}, Computer Won :(`);
+            return (`${computerSelection} beats ${playerSelection}, round for computer :(`);
     }
 }
 
@@ -58,9 +58,15 @@ defineWinner = () => {
     } else if (playerScore == computerScore) {
         return "Game!";
     } else if (computerScore > playerScore) {
-        return 'Computer won 0_0, try again!';
+        return 'Computer won the match 0_0, try again!';
     } else if (playerScore == 5) {
         return 'Flawless Victory!'
+    }
+}
+
+endgame = () => {
+    if (round == 5) {
+        
     }
 }
 
@@ -80,3 +86,4 @@ console.log(playRound());
 console.log(playerScore, computerScore, round);
 
 console.log(defineWinner())
+

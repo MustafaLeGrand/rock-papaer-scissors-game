@@ -1,14 +1,19 @@
 body {
+    color: white;
+    height: 100%;
     padding: 0;
     margin: 0;
-    background-color: #0dd2d2;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .title {
+    font-size: 50px;
+    font-weight: 0;
     display: flex;
     justify-content: center;
     padding-top: 20px;
@@ -27,7 +32,7 @@ body {
 .scoreboard {
     height: 50px;
     width: 200px;
-    border: double 6px black;
+    border: double 6px white;
     border-radius: 8px;
     padding: 20px;
     display: flex;
@@ -76,7 +81,7 @@ body {
 .box {
     width: 100px;
     height: 100px;
-    border: solid 2px black;
+    border: solid 2px white;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -88,22 +93,22 @@ body {
     gap: 50px;
 }
 
-.icon:hover {
+.fa-solid:hover {
     cursor: pointer;
 }
 
-.fa-hand-scissors.icon:hover {
-    color: rgb(3, 61, 251);
+.fa-hill-rockslide:hover {
+    color: rgb(255, 136, 0);
 }
 
-.fa-hand-fist.icon:hover {
-    color: rgb(228, 16, 16);
+.fa-toilet-paper:hover {
+    color: rgb(255, 136, 0);
 }
 
-.fa-hand.icon:hover {
-    color: rgb(236, 220, 220);
+.fa-scissors:hover {
+    color: rgb(255, 136, 0);
 }
 
-.fa-hand-fist, .fa-hand-scissors, .fa-hand {
+.fa-scissors, .fa-toilet-paper, .fa-hill-rockslide {
     font-size: 30px;
 }
