@@ -70,20 +70,27 @@ endgame = () => {
     }
 }
 
-console.log(playRound());
-console.log(playerScore, computerScore, round);
+// console.log(playRound());
+// console.log(playerScore, computerScore, round);
 
-console.log(playRound());
-console.log(playerScore, computerScore, round);
+// console.log(playRound());
+// console.log(playerScore, computerScore, round);
 
-console.log(playRound());
-console.log(playerScore, computerScore, round);
+// console.log(playRound());
+// console.log(playerScore, computerScore, round);
 
-console.log(playRound());
-console.log(playerScore, computerScore, round);
+// console.log(playRound());
+// console.log(playerScore, computerScore, round);
 
-console.log(playRound());
-console.log(playerScore, computerScore, round);
+// console.log(playRound());
+// console.log(playerScore, computerScore, round);
 
-console.log(defineWinner())
+// console.log(defineWinner())
+
+let buttons = document.querySelectorAll('button');
+
+console.log(buttons);
+
+
+
 
