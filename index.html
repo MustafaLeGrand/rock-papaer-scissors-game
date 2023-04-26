@@ -12,18 +12,18 @@
 </head>
 <body>
     <h1 class="title">Rock Paper Scissors</h1>
-    <div class="round">
+    <div class="roundBox">
         <div>Round</div> 
-        <div>0</div>
+        <div id="round"></div>
     </div>
     <div class="scoreboard">
-        <div class="user">
+        <div class="player">
             user
         </div>
         <div class="score">
-            <div id="playerScore">0</div>
-            -
-            <div id="computerScore">0</div>
+            <div id="playerScore"></div>
+            <span>-</span>
+            <div id="computerScore"></div>
         </div>
         <div class="comp">
             comp
@@ -31,16 +31,19 @@
     </div>
     <div class="options">
         <div class="userOptions">
-            <button class="box">
+            <button id="rock">
                 <i class="fa-solid fa-hill-rockslide"></i>
             </button>
-            <button class="box">
+            <button id="paper">
                 <i class="fa-solid fa-toilet-paper"></i>
             </button>
-            <button>
+            <button id="scissors">
                 <i class="fa-solid fa-scissors"></i>
             </button>
         </div>
+    </div>
+    <div id="results">
+        <b>Click any button to start</b>
     </div>
     <script src="./assets/main.js"></script>
     <script src="https://kit.fontawesome.com/a64d0117c4.js" crossorigin="anonymous"></script>

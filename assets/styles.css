@@ -28,7 +28,7 @@ body {
     border-bottom: white 6px double;
 }
 
-.round {
+.roundBox {
     font-size: 25px;
     display: flex;
     flex-direction: column;
@@ -59,7 +59,7 @@ body {
     font-size: 30px;
 }
 
-.user, .comp {
+.player, .comp {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +70,7 @@ body {
     font-size: 20px;
 }
 
-.user {
+.player {
     background-color: rgb(255, 143, 16);
     box-shadow: -8px 8px 12px 2px rgba(255, 136, 0, 0.415);
 }
@@ -103,8 +103,9 @@ button {
 
 button:hover {
     transform: scale(1.2);
-    background-color: rgb(255, 143, 16);
+    background-color: rgb(19, 19, 19);
     box-shadow: -8px 8px 12px 2px rgba(255, 136, 0, 0.415);
+    border: solid 4px orange;
 }
 
 .userOptions {
@@ -114,4 +115,8 @@ button:hover {
 
 .fa-scissors, .fa-toilet-paper, .fa-hill-rockslide {
     font-size: 30px;
+}
+
+#results {
+    padding: 75px;
 }
