@@ -52,7 +52,8 @@ let updateScore = () =>
 // Define tie game, winner or loser
 let defineWinner = () => 
 {
-    if (playerScore > computerScore && round >= 5) {
+    if (playerScore > computerScore && round >= 5) 
+    {
         textDisplay.innerHTML = 'Cheers, You won!';
     } else if (playerScore == computerScore && round >= 5) {
         textDisplay.innerHTML = 'Game!';
@@ -80,6 +81,7 @@ function playRound (e) {
     // set playerSelection to 
     let playerSelection = this.id;
     console.log(`player selected: ${playerSelection}`);
+    
     // set computerSelection to
     let computerSelection = computerPlay();
     console.log(`computer selected: ${computerSelection}`);
