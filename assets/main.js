@@ -25,10 +25,10 @@ let resultDisplay = document.getElementById('results');
 let buttons = document.querySelectorAll('button');
 
 // Round
-let round = 1;
+let round = '';
 roundDisplay.textContent = round;
 //Add round
-let addRound = () => round += 1;
+let addRound = () => round ++;
 
 // Scores
 let playerScore = 0;
@@ -39,7 +39,7 @@ cScoreDisplay.textContent = computerScore;
 // updateRound helper
 let updateRound = () => 
 {
-        roundDisplay.textContent = round
+    roundDisplay.textContent = round
 }
 
 // updateScore helper 
@@ -52,39 +52,49 @@ let updateScore = () =>
 // Define tie game, winner or loser
 let defineWinner = () => 
 {
-    if (playerScore > computerScore && round >= 5) 
-    {
-        textDisplay.innerHTML = 'Cheers, You won!';
-    } else if (playerScore == computerScore && round >= 5) {
-        textDisplay.innerHTML = 'Game!';
-    } else if (computerScore > playerScore && round >= 5) {
-        textDisplay.innerHTML = 'Computer won 0_0, try again!';
-    } else if (playerScore == 5) {
-        textDisplay.innerHTML = 'Flawless Victory!'
+    let endScreen = document.getElementById('endScreen'); 
+
+    if (playerScore === 5)
+    {   
+        resultDisplay.textContent = 'You win, human.';
     }
+    else if (computerScore === 5)
+    {
+       
+        resultDisplay.textContent = 'Computer wins!!';
+    }
+    else if (playerScore === 5 && computerScore === 0)
+    {
+        
+        resultDisplay.textContent = 'Flawless victory!';
+    }
+    else if (computerScore === 5 && playerScore === 0)
+    {
+        
+        resultDisplay.textContent = 'Computer whipped your ass, poor poor human'
+    }
+
 }
 
 // Finish the game
 let endgame = () => 
 {
-    if (round == 5) {
-        round = 1;
-        pScoreDisplay.innerHTML = 0;
-        cScoreDisplay.innerHTML = 0;
+    if (playerScore == 5 || computerScore == 5) {
+        round = 0;
+        playerScore = 0;
+        computerScore = 0;
     }
 }
 
 // Add round, sum points to round winner
-function playRound (e) {
-    e.stopPropagation();
-
+function playRound () {
     // set playerSelection to 
     let playerSelection = this.id;
-    console.log(`player selected: ${playerSelection}`);
-    
+    console.log(`player selected: ${playerSelection}, p:${playerScore}`);
+
     // set computerSelection to
     let computerSelection = computerPlay();
-    console.log(`computer selected: ${computerSelection}`);
+    console.log(`computer selected: ${computerSelection}, c:${computerScore}`);
 
     switch (playerSelection + computerSelection) 
     {
@@ -93,27 +103,29 @@ function playRound (e) {
         case 'paperpaper':
         case 'scissorsscissors':
             resultDisplay.textContent = 'Tie!';
-            break;
+        break;
         // Player score
         case 'rockscissors':
         case 'paperrock':
         case 'scissorspaper':
             playerScore ++;
-            resultDisplay.textContent = `${playerSelection} beats ${computerSelection}, You get the round!`;
-            break;
+            resultDisplay.textContent = `${playerSelection} beats ${computerSelection}, you get the round!`;
+        break;
         // Computer score    
         case 'scissorsrock':
         case 'rockpaper':
         case 'paperscissors':
             computerScore ++;
             resultDisplay.textContent = `${computerSelection} beats ${playerSelection}, round for computer :(`;
-            break;
+        break;
     }
+    defineWinner();
+    endgame();
     addRound();
     updateRound();
     updateScore();
 }
 
 buttons.forEach(button => button.addEventListener('click', playRound, {
-    // once: true,
+    
 }));
