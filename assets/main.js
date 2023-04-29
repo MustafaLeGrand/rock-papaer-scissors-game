@@ -19,13 +19,19 @@ let pScoreDisplay = document.getElementById('playerScore');
 let cScoreDisplay = document.getElementById('computerScore');
 // Results display
 let resultDisplay = document.getElementById('results');
+// endScreen display 
+let endScreenDisplay = document.getElementById('endScreenBox');
+// playAgainBtn 
+let playAgainBtn = document.getElementById('restart');
+// end black screen
+let black = document.getElementById('black');
 
 // Buttons
 // player buttons
 let buttons = document.querySelectorAll('button');
 
 // Round
-let round = '';
+let round = '0';
 roundDisplay.textContent = round;
 //Add round
 let addRound = () => round ++;
@@ -52,26 +58,26 @@ let updateScore = () =>
 // Define tie game, winner or loser
 let defineWinner = () => 
 {
-    let endScreen = document.getElementById('endScreen'); 
+    let endScreenTextDisplay = document.getElementById('endScreenText');
 
     if (playerScore === 5)
     {   
-        resultDisplay.textContent = 'You win, human.';
+        endScreenTextDisplay.textContent = 'You win, human.';
     }
     else if (computerScore === 5)
     {
        
-        resultDisplay.textContent = 'Computer wins!!';
+        endScreenTextDisplay.textContent = 'Computer wins!!';
     }
     else if (playerScore === 5 && computerScore === 0)
     {
         
-        resultDisplay.textContent = 'Flawless victory!';
+        endScreenTextDisplay.textContent = 'Flawless victory!';
     }
     else if (computerScore === 5 && playerScore === 0)
     {
         
-        resultDisplay.textContent = 'Computer whipped your ass, poor poor human'
+        endScreenTextDisplay.textContent = 'Computer whipped your ass, poor poor human'
     }
 
 }
@@ -80,6 +86,8 @@ let defineWinner = () =>
 let endgame = () => 
 {
     if (playerScore == 5 || computerScore == 5) {
+        endScreenDisplay.style.display = 'flex';
+        black.style.display = 'block';
         round = 0;
         playerScore = 0;
         computerScore = 0;
@@ -126,6 +134,13 @@ function playRound () {
     updateScore();
 }
 
-buttons.forEach(button => button.addEventListener('click', playRound, {
-    
-}));
+buttons.forEach(button => button.addEventListener('click', playRound));
+
+let removeBox = () => 
+{
+    endScreenDisplay.style.display = 'none';
+    black.style.display = 'none';
+    resultDisplay.textContent = 'Click any button to start';
+}
+
+playAgainBtn.addEventListener('click', removeBox);

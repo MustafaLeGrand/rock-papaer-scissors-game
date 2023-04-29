@@ -131,6 +131,54 @@ body {
     position: absolute;
 }
 
+#endScreenBox {
+    border: double 4px rgb(255, 143, 16);
+    padding: 50px;
+    width: 200px;
+    height: 110px;
+    background-color: black;
+    border-radius: 14px;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1;
+}
+
+#endScreenText {
+    margin-bottom: 70px;
+    position: fixed;
+}
+
+#restart {
+    background-color: black;
+    border: solid rgb(255, 143, 16) 3px;
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    margin-top: 70px;
+}
+
+#restart:hover {
+    transform: scale(1.1);
+    background-color: rgb(19, 19, 19);
+    border: solid 4px rgb(255, 143, 16);
+    color: rgb(255, 143, 16);
+}
+
 #results {
     padding: 75px;
+}
+
+#black {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.523);
+    z-index: 1;
+    position: absolute;
 }
