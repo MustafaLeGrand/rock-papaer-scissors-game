@@ -79,7 +79,6 @@ let defineWinner = () =>
         
         endScreenTextDisplay.textContent = 'Computer whipped your ass, poor poor human'
     }
-
 }
 
 // Finish the game
@@ -134,8 +133,10 @@ function playRound () {
     updateScore();
 }
 
+//Start game helper
 buttons.forEach(button => button.addEventListener('click', playRound));
 
+//Remove end screen box and restart game helper
 let removeBox = () => 
 {
     endScreenDisplay.style.display = 'none';
